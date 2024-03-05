@@ -20,9 +20,10 @@ from rest_framework import routers
 from books.API import viewsets
 # Criando as rotas
 router = routers.DefaultRouter()
-router.register(r'books',viewsets.BooksViewSet)
+router.register(r'books',viewsets.BooksViewSet,basename='books')
 
 urlpatterns = [
     path('',include(router.urls)),
+    path('auth/',include('books.urls')),
     path('admin/', admin.site.urls),
 ]
