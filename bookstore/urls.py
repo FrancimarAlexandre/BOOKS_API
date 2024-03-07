@@ -17,13 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from books.API import viewsets
-# Criando as rotas
-router = routers.DefaultRouter()
-router.register(r'books',viewsets.BooksViewSet,basename='books')
+from books import views
 
 urlpatterns = [
-    path('',include(router.urls)),
-
+    path('', views.ApiOverview, name='home'),
     path('admin/', admin.site.urls),
 ]
