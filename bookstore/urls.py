@@ -21,5 +21,6 @@ from books import views
 
 urlpatterns = [
     path('', views.ApiOverview, name='home'),
+    path('create/', views.add_items, name='add-items'),
     path('admin/', admin.site.urls),
 ]
